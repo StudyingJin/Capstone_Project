@@ -1,0 +1,23 @@
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-button {
+    margin-bottom: 30px; /* 기존 간격의 1.5배 */
+    padding: 25px; /* 내부 여백도 조정 */
+    font-size: 24px; /* 글자 크기 1.5배 증가 */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px; /* 버튼 너비 1.5배 증가 */
+    height: 80px; /* 버튼 높이 1.5배 증가 */
+}
+
+/* 마지막 버튼의 마진 제거 */
+.custom-button:last-child {
+    margin-bottom: 0;
+}
