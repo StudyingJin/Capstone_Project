@@ -16,15 +16,15 @@ Module.register("MMM-CustomButtons", {
             self.startExercise("pushup");
         });
 
-        // Dumb-bell Curl 버튼
+        // Dumbbell Curl 버튼
         var button2 = document.createElement("button");
-        button2.innerHTML = "Dumb-bell Curl";
+        button2.innerHTML = "Dumbbell Curl";
         button2.className = "custom-button";
         button2.addEventListener("click", function() {
             self.startExercise("dumbbell_curl");
         });
 
-        // 스쿼트 버튼
+        // Squat 버튼
         var button3 = document.createElement("button");
         button3.innerHTML = "Squat";
         button3.className = "custom-button";
@@ -37,7 +37,7 @@ Module.register("MMM-CustomButtons", {
         button4.innerHTML = "Quit";
         button4.className = "custom-button";
         button4.addEventListener("click", function() {
-            self.quitExercise();
+            self.endExercise();
         });
 
         wrapper.appendChild(button1);
@@ -50,36 +50,12 @@ Module.register("MMM-CustomButtons", {
 
     startExercise: function(exerciseType) {
         // 새로운 창 열기 (전체 화면 모드로 열기)
-        var exerciseWindow = window.open("http://127.0.0.1:5000", exerciseType, "width=800,height=600");
-
-        exerciseWindow.onload = function() {
-            exerciseWindow.document.body.style.margin = '0';
-            exerciseWindow.document.body.style.overflow = 'hidden';
-
-            // CSS 추가: iframe을 창 크기에 맞게 조정
-            var style = document.createElement('style');
-            style.innerHTML = `
-                body, html {
-                    width: 100%;
-                    height: 100%;
-                    margin: 0;
-                    overflow: hidden;
-                }
-                iframe {
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                }
-            `;
-            exerciseWindow.document.head.appendChild(style);
-
-            console.log(exerciseType + " started in new window.");
-        };
+        var exerciseWindow = window.open("http://127.0.0.1:5000/video_feed/" + exerciseType, exerciseType, "width=800,height=600");
     },
 
-    quitExercise: function() {
-        // 홈 화면 복귀
-        alert("Exercise Session Ended. Returning to Home Screen.");
+    endExercise: function() {
+        // 운동 세션 종료 후 만족도 조사 페이지로 이동
+        window.location.href = "http://127.0.0.1:5000/satisfaction";
     },
 
     getStyles: function() {
