@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satisfaction Survey</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Satisfaction Survey</h1>
+        <form method="post" action="/satisfaction">
+            <label for="rating">Rate your satisfaction with the exercise session:</label><br>
+            <select name="rating" id="rating">
+                <option value="1">1 - Very Dissatisfied</option>
+                <option value="2">2 - Dissatisfied</option>
+                <option value="3">3 - Neutral</option>
+                <option value="4">4 - Satisfied</option>
+                <option value="5">5 - Very Satisfied</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
