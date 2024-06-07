@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainScreen">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 상단 버튼 레이아웃 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <!-- "+" 버튼 -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/inputDataButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    app:srcCompat="@android:drawable/ic_input_add" />
+
+                <!-- 여백을 채워서 버튼을 우측으로 배치 -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!-- 식단추천버튼 -->
+                <Button
+                    android:id="@+id/FoodInsertButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_margin="8dp"
+                    android:text="@string/RecFood" />
+            </LinearLayout>
+
+            <!-- 제목1: 운동 현황 -->
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="운동 현황"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- 운동 현황 내용 -->
+            <LinearLayout
+                android:id="@+id/exerciseStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/exerciseGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="운동 목표: 3 / 4"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/exerciseTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="운동 시간: 36 / 60 분"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/caloriesBurned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="소모 열량: 275 / 450 kcal"
+                    android:textSize="18sp" />
+
+                <!-- 운동 목표 달성률 파이 차트 -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/exerciseGoalPieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp" />
+
+                <!-- 운동 시간 파이 차트 -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/exerciseTimePieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp" />
+
+                <!-- 소모 열량 파이 차트 -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/caloriesBurnedPieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+
+            <!-- 제목2: 최근 운동 기록 -->
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="최근 운동 기록"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- 최근 운동 기록 내용 -->
+            <LinearLayout
+                android:id="@+id/recentExerciseRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal">
+
+                <!-- 운동 사진 공간 -->
+                <ImageView
+                    android:id="@+id/exercisePhoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/darker_gray"
+                    android:contentDescription="Exercise Photo" />
+
+                <!-- 운동 이름 공간 -->
+                <TextView
+                    android:id="@+id/exerciseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="스쿼트"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- 제목3: 인바디 정보 -->
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/title3"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- 본문3 인바디 정보 -->
+            <LinearLayout
+                android:id="@+id/content3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:lineSpacingMultiplier="1.2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/resultTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="정보 입력이 되지 않았습니다.\n정보를 입력해주세요."
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="16dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/asktomirror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="운동 데이터 기록" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
