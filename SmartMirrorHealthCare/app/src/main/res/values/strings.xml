@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">HealthApp</string>
+    <string name="strBtn1">Login</string>
+    <string name="health_care">Health Care</string>
+    <string name="with_smart_mirror">With Smart Mirror</string>
+    <string name="email">Email</string>
+    <string name="back">이전</string>
+    <string name="main">Main(개발중)</string>
+    <string name="status">[운동현황]</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="todo">운동결과를 입력합니다.</string>
+    <string name="todo1">도움말</string>
+    <string name="title1">[운동 현황]</string>
+    <string name="content1"><![CDATA[>>본문1]]></string>
+    <string name="title2">[최근 운동 기록]</string>
+    <string name="content2"><![CDATA[>>본문2]]></string>
+    <string name="title3">[인바디 정보]</string>
+    <string name="content3"><![CDATA[>>본문3]]></string>
+    <string name="login_text">연동 테스트 로그인</string>
+    <string name="main_text">연동 테스트</string>
+    <string name="RecFood">식단추천</string>
+    <string-array name="gender_array">
+        <item>남자</item>
+        <item>여자</item>
+    </string-array>
+</resources>
